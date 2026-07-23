@@ -1,10 +1,9 @@
 import { vi } from "vitest";
 
-// Tests drive React state updates from outside event handlers (map callbacks,
-// geolocation callbacks), so they wrap them in act().
-(
-	globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }
-).IS_REACT_ACT_ENVIRONMENT = true;
+// IS_REACT_ACT_ENVIRONMENT is intentionally NOT set here: vitest-browser-react
+// overwrites it around every render/rerender/unmount, so a startup value is a
+// lie after the first render. Tests wrap out-of-React updates in the act from
+// test-utils/act.ts, which manages the flag per call.
 
 // Minimal google.maps globals for code paths that construct API objects
 // directly (LatLngBounds in the imperative handle, Point in mouse mapping).

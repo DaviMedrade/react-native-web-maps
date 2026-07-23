@@ -3,7 +3,7 @@
 // stale memo binding).
 
 import { useState } from "react";
-import { act } from "react";
+import { act } from "../test-utils/act";
 import { describe, expect, it, vi } from "vitest";
 import { render } from "vitest-browser-react";
 import MapView from "../../index.web";

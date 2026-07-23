@@ -1,7 +1,7 @@
 // F3 regression: onRegionChangeComplete fires on any camera settle (onIdle),
 // carries the correct isGesture flag, and is NOT bound to onDragEnd.
 
-import { act } from "react";
+import { act } from "../test-utils/act";
 import { describe, expect, it, vi } from "vitest";
 import { render } from "vitest-browser-react";
 import MapView from "../../index.web";

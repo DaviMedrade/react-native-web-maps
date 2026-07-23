@@ -1,7 +1,7 @@
 // F1 regression: children added after first render must appear without any
 // map interaction (upstream froze them inside a stale memo).
 
-import { act } from "react";
+import { act } from "../test-utils/act";
 import { describe, expect, it, vi } from "vitest";
 import { render } from "vitest-browser-react";
 import MapView, { Marker } from "../../index.web";

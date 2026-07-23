@@ -3,7 +3,7 @@
 // watch is cleaned up on unmount; the camera only follows with
 // followsUserLocation.
 
-import { act } from "react";
+import { act } from "../test-utils/act";
 import { describe, expect, it, vi } from "vitest";
 import { render } from "vitest-browser-react";
 import MapView from "../../index.web";
