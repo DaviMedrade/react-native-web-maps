@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # Runs the prepare script (build), doubling as a git-install smoke test.
+      - run: npm ci
+
+      - name: Get Playwright version
+        id: playwright-version
+        run: echo "version=$(node -p "require('playwright/package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ steps.playwright-version.outputs.version }}
+
+      - run: npx playwright install chromium --with-deps
+
+      - run: npm run lint
+
+      - run: npm run typecheck
+
+      - run: npm test

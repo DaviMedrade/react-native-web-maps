@@ -1,0 +1,19 @@
+{
+	"name": "react-native-web-maps-example",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build"
+	},
+	"dependencies": {
+		"@react-google-maps/api": "^2.20.8",
+		"react": "^19.2.8",
+		"react-dom": "^19.2.8"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-react": "^5.1.4",
+		"vite": "^7.3.4"
+	}
+}

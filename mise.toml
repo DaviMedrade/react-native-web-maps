@@ -1,0 +1,29 @@
+[tools]
+node = "22"
+
+[env]
+_.file = ".env"
+
+[tasks.format]
+description = "Format all files with Prettier"
+run = "npm run format"
+
+[tasks.lint]
+description = "Lint with ESLint"
+run = "npm run lint"
+
+[tasks.typecheck]
+description = "Typecheck with tsc"
+run = "npm run typecheck"
+
+[tasks.test]
+description = "Run the Vitest suites"
+run = "npm test"
+
+[tasks.build]
+description = "Build CJS + ESM + type declarations into dist/"
+run = "npm run build"
+
+[tasks.example]
+description = "Run the Vite example app (needs VITE_GOOGLE_MAPS_API_KEY in .env)"
+run = "npm --prefix example install && npm --prefix example run dev"
