@@ -25,7 +25,10 @@ consumers use `src/` directly through the `react-native`/`source` fields, so
 no build output is required for Expo apps.
 
 Peer dependencies your app must provide: `react`, `react-native`,
-`react-native-maps`, and `@react-google-maps/api`.
+`react-native-maps`, and `@react-google-maps/api`. npm 7+ auto-installs any
+of these that are missing (recorded only in `package-lock.json`); if you
+prefer explicit dependencies — `@react-google-maps/api` is typically the one
+your app won't already have — add them to your `package.json` yourself.
 
 ## Usage
 
