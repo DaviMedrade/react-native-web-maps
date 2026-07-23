@@ -3,3 +3,4 @@ dist/
 coverage/
 CLAUDE.local.md
 .env
+.playwright-mcp/
